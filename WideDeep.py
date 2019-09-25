@@ -40,12 +40,10 @@ class WideDeep(nn.Module):
         """
         # wide model
         wide_data = x[0]
-        print(wide_data)
         wide_out = self.wide(wide_data.float())
 
         # deep model
         deep_data = x[1]
-        print(deep_data)
         deep_out = self.deep(deep_data)
 
         assert wide_out.size() == deep_out.size()
